@@ -149,6 +149,7 @@ const useStyles = makeStyles((theme) => ({
     // backgroundColor: "white",
     alignSelf: "flex-end",
   },
+
 }));
 
 export default function Dashboard() {
@@ -294,7 +295,6 @@ export default function Dashboard() {
           <style>
             {`
             @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
-
             body {
               font-family: "Roboto", helvetica, arial, sans-serif;
               font-size: 16px;
@@ -304,7 +304,6 @@ export default function Dashboard() {
             
             
             /*** Table Styles **/
-            
             .table-fill {
               background: white;
               border-radius:3px;
@@ -319,12 +318,12 @@ export default function Dashboard() {
               background:#0d6efd;
               border-bottom:4px solid #9ea7af;
               border-right: 1px solid #343a45;
-              font-size:23px;
-              font-weight: 100;
-              padding:10px;
+              font-size:16px;
+              padding:8px;
               text-align:left;
               text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
               vertical-align:middle;
+              fontWeight: "bold",
             }
             
             th:first-child {
@@ -380,7 +379,7 @@ export default function Dashboard() {
               padding:10px;
               text-align:left;
               vertical-align:middle;
-              font-weight:300;
+              font-weight:500;
               font-size:18px;
               text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
               border-right: 1px solid #C1C3D1;
@@ -430,7 +429,33 @@ export default function Dashboard() {
           margin-top:48%;
           width: 150%;
         }
-            `}
+        
+        /* Hide the scrollbar */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Optional: Customizing scrollbar appearance */
+/* You can adjust these styles to match your design */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+html {
+  scroll-behavior: smooth;
+}
+.text-center {
+  text-align: center;
+}
+       `}
+            
           </style>
           <body>
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"></link>
@@ -459,10 +484,13 @@ export default function Dashboard() {
             </div>
             <div class="col">
             <div class="table-title">
-                <h3>Host in Cloud</h3>
+                {/* <h3>Host in Cloud</h3> */}
             </div>
                 <table class="table-fill">
                     <thead>
+                    <tr>
+            <th colspan="3" class="text-center">Host in Cloud</th>
+        </tr>
                         <tr>
                             <th class="text-left">Controller</th>
                             <th class="text-left">Computer</th>
