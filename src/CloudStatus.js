@@ -162,7 +162,6 @@ function CloudStatus() {
     console.log("Selected option:", event.target.value);
     // You can perform any action based on the selected option here
   }
-
   function handleButtonClick(button) {
     if (button === 1) {
       setShowServiceTable(true);
@@ -373,7 +372,6 @@ function CloudStatus() {
 
         </List>
         <Divider />
-        {/* Add your secondary list items here */}
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
@@ -437,6 +435,13 @@ function CloudStatus() {
                 fontWeight: "bold"
               }}
               onClick={() => handleButtonClick(1)}
+              onFocus={(e) => e.target.style.backgroundColor = "#1e5dab"}
+              onBlur={(e) => e.target.style.backgroundColor = "#3995f8"}
+              // Additional CSS for focus state
+              css={`  
+                .highlighted {
+                  background-color: #1e5dab;
+                `}
             >
               Service status
             </button>
@@ -459,6 +464,13 @@ function CloudStatus() {
                 fontWeight: "bold"
               }}
               onClick={() => handleButtonClick(2)}
+              onFocus={(e) => e.target.style.backgroundColor = "#1e5dab"}
+              onBlur={(e) => e.target.style.backgroundColor = "#3995f8"}
+              // Additional CSS for focus state
+              css={`  
+                .highlighted {
+                  background-color: #1e5dab;
+                `}
             >
               Events
             </button>
@@ -482,19 +494,27 @@ function CloudStatus() {
                 fontWeight: "bold"
               }}
               onClick={() => handleButtonClick(3)}
+              onFocus={(e) => e.target.style.backgroundColor = "#1e5dab"}
+              onBlur={(e) => e.target.style.backgroundColor = "#3995f8"}
+              css={`// In your CSS file
+              .tableHead {
+              background-color: #3995f8;
+              `}
             >
               Alerts
             </button>
+          {/* Add margin below the button */}
+          <div style={{ marginBottom: "40px" }}></div>
           </div>
           {showServiceTable && (
             <TableContainer component={Paper}>
               <Table>
-                <TableHead>
+                <TableHead className={classes.tableHead}>
                   <TableRow>
                     <TableCell className={classes.controllerCell}>CONTROLLER</TableCell>
                     <TableCell>STATUS</TableCell>
                   </TableRow>
-                </TableHead>
+                </TableHead >
                 <TableBody>
                   {hiMessage.map((item, index) => (
                     <TableRow key={index}>
