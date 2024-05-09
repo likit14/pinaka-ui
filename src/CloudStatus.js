@@ -56,6 +56,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+   
   },
   toolbar: {
     paddingRight: 24, // keep right padding when drawer closed
@@ -511,8 +512,8 @@ function CloudStatus() {
               <Table>
                 <TableHead className={classes.tableHead}>
                   <TableRow>
-                    <TableCell className={classes.controllerCell}>CONTROLLER</TableCell>
-                    <TableCell>STATUS</TableCell>
+                    <TableCell style={{fontWeight: 'bold'}}>CONTROLLER</TableCell>
+                    <TableCell style={{fontWeight: 'bold'}}>STATUS</TableCell>
                   </TableRow>
                 </TableHead >
                 <TableBody>
@@ -531,9 +532,9 @@ function CloudStatus() {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>S No.</TableCell>
-                    <TableCell>Description</TableCell>
-                    <TableCell>Status</TableCell>
+                  <TableCell style={{ fontWeight: 'bold' }}>S NO.</TableCell>
+                    <TableCell style={{fontWeight: 'bold'}}>DESCRIPTION</TableCell>
+                    <TableCell style={{fontWeight: 'bold'}}>STATUS</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -553,9 +554,9 @@ function CloudStatus() {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>S No.</TableCell>
-                    <TableCell>Description</TableCell>
-                    <TableCell>Status</TableCell>
+                  <TableCell style={{ fontWeight: 'bold' }}>S NO.</TableCell>
+                    <TableCell style={{fontWeight: 'bold'}}>DESCRIPTION</TableCell>
+                    <TableCell style={{fontWeight: 'bold'}}>STATUS</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
