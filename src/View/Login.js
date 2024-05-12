@@ -5,12 +5,9 @@ function Login() {
   const [userName,setUsername]=useState('')
   const [password,setPassword]=useState('')
 
-  useEffect(()=>{
-    localStorage.removeItem("loginData")
-  },[])
 
   const handleLogin=()=>{
-    localStorage.setItem("loginData",{userName,password})
+    localStorage.setItem("loginData",JSON.stringify({userName,password}))
     setUsername('')
     setPassword('')
   }

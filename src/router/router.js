@@ -5,7 +5,9 @@ import CloudStatus from '../View/CloudStatus'
 import App from "../App";
 import CentralCloud from "../View/CentralCloud";
 
-const isLogin=localStorage.getItem("loginData")
+const loginData=JSON.parse(localStorage.getItem("loginData"))
+const userData={userName:"Pinaka",password:"Pinaka@123"}
+const isLogin=loginData&&(loginData.userName===userData.userName)&&(loginData.password===userData.password)
 export const router=createBrowserRouter([
     {
     path:'/',
