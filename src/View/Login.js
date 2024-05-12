@@ -1,10 +1,23 @@
-import React from 'react';
-import img1 from './Images/logo.png';
-import { Link } from 'react-router-dom';
+import React, { useState,useEffect } from 'react';
+import img1 from '../Images/logo.png';
 
-function Login(){
-    return(
-        
+function Login() {
+  const [userName,setUsername]=useState('')
+  const [password,setPassword]=useState('')
+
+  useEffect(()=>{
+    localStorage.removeItem("loginData")
+  },[])
+
+  const handleLogin=()=>{
+    localStorage.setItem("loginData",{userName,password})
+    setUsername('')
+    setPassword('')
+  }
+
+
+  return (
+
     <html lang="en">
       <head>
         <meta charset="UTF-8" />
@@ -76,11 +89,11 @@ function Login(){
           <div className="logo">
             <img src={img1} alt="Logo" style={{ userSelect: 'none', cursor: 'text' }} />
           </div>
-          <form action="home" method="GET">
-          <label htmlFor="username" style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px' }}>Username</label>
-            <input type="text" id="username" placeholder="Enter your username" required />
+          <form onSubmit={handleLogin}>
+            <label htmlFor="username" style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px' }}>Username</label>
+            <input type="text" id="username" placeholder="Enter your username" value={userName} onChange={(e)=>setUsername(e.target.value)} required />
             <label htmlFor="username" style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px' }}>Password</label>
-            <input type="password" id="password" placeholder="Enter your password" required />
+            <input type="password" id="password" placeholder="Enter your password" value={password} onChange={(e)=>setPassword(e.target.value)} required />
             <input type="submit" value="Sign In" />
           </form>
           <div className="new-user">
@@ -102,10 +115,10 @@ function Login(){
       </body>
     </html>
 
-)
+  )
 
 }
 
 export default Login;
 
-    
+

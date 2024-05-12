@@ -1,55 +1,6 @@
 import React, { useState } from 'react';
-import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Drawer from "@material-ui/core/Drawer";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import Container from "@material-ui/core/Container";
-import Divider from "@material-ui/core/Divider";
-import Link from "@material-ui/core/Link";
-import CloudIcon from "@material-ui/icons/Cloud";
-import Fault from "@material-ui/icons/Announcement";
-import Host from "@material-ui/icons/People"
-import StorageCluster from "@material-ui/icons/Storage"
-import CentralCloud from "@material-ui/icons/CloudCircle";
-import Kubernetes from "@material-ui/icons/Widgets"
-import MenuIcon from "@material-ui/icons/Menu";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import Software from "@material-ui/icons/SettingsApplicationsRounded"
-import ListItemText from "@material-ui/core/ListItemText";
-import Migration from "@material-ui/icons/Flight"
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import Service from "@material-ui/icons/Help"
-import BarChartIcon from "@material-ui/icons/BarChart";
-import Code from "@material-ui/icons/Code";
-import { Flight, Help } from "@material-ui/icons";
 import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody } from '@material-ui/core';
-
-function ListItemLink(props) {
-  return <ListItem button component="a" {...props} />;
-}
-
-function Copyright() {
-  const classes = useStyles();
-  return (
-    <Container className={classes.footer}>
-      <Typography variant="body2" color="textSecondary" align="center">
-        {"Copyright © "}
-        <Link color="inherit" href="https://pinakastra.com">
-          <b>Turn-Key Cloud Platform for Academia, Research & Enterprises</b>
-        </Link>{" "}
-        {new Date().getFullYear()}
-        {"."}
-      </Typography>
-    </Container>
-  );
-}
 
 const drawerWidth = 240;
 
@@ -74,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
+    backgroundColor: 'rgba(25,119,183,255)', // Change the color here
   },
   appBarShift: {
     marginLeft: drawerWidth,
@@ -257,130 +209,11 @@ function CloudStatus() {
   }
 
   return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <AppBar
-        position="absolute"
-        className={clsx(classes.appBar, open && classes.appBarShift)}
-      >
-        <Toolbar className={classes.toolbar}>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            component="h1"
-            variant="h6"
-            color="inherit"
-            noWrap
-            className={classes.title}
-          >
-            Cloud Status
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Drawer
-        variant="permanent"
-        classes={{
-          paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
-        }}
-        open={open}
-      >
-        <div className={classes.toolbarIcon}>
-          <IconButton onClick={handleDrawerClose}>
-            <ChevronLeftIcon />
-          </IconButton>
-        </div>
-        <Divider />
-        <List>
-          <ListItemLink href="/dashboard">
-            <ListItemIcon>
-              <DashboardIcon />
-            </ListItemIcon>
-            <ListItemText primary="Dashboard"/>
-          </ListItemLink>
-          <ListItemLink href="/cloudstatus">
-            <ListItemIcon>
-              <CloudIcon />
-            </ListItemIcon>
-            <ListItemText primary="Cloud Status" />
-          </ListItemLink>
-          <ListItemLink href="/">
-            <ListItemIcon>
-              <CentralCloud />
-            </ListItemIcon>
-            <ListItemText primary="Central Cloud" />
-          </ListItemLink>
-          <ListItemLink href="/">
-            <ListItemIcon>
-              <BarChartIcon />
-            </ListItemIcon>
-            <ListItemText primary="Sub Clouds" />
-          </ListItemLink>
-          <ListItemLink href="/">
-            <ListItemIcon>
-              <Kubernetes />
-            </ListItemIcon>
-            <ListItemText primary="Kubernetes" />
-          </ListItemLink>
-          <ListItemLink href="/">
-            <ListItemIcon>
-              <StorageCluster />
-            </ListItemIcon>
-            <ListItemText primary="Storage Cluster" />
-          </ListItemLink>
-          <ListItemLink href="/">
-            <ListItemIcon>
-              <Code />
-            </ListItemIcon>
-            <ListItemText primary="Conifg Mgmt" />
-          </ListItemLink>
-          <ListItemLink href="/">
-            <ListItemIcon>
-              <Fault />
-            </ListItemIcon>
-            <ListItemText primary="Fault Mgmt" />
-          </ListItemLink>
-          <ListItemLink href="/">
-            <ListItemIcon>
-              <Host />
-            </ListItemIcon>
-            <ListItemText primary="Host Mgmt" />
-          </ListItemLink>
-          <ListItemLink href="/">
-            <ListItemIcon>
-              <Help />
-            </ListItemIcon>
-            <ListItemText primary="Service Mgmt" />
-          </ListItemLink>
-          <ListItemLink href="/">
-            <ListItemIcon>
-              <Software />
-            </ListItemIcon>
-            <ListItemText primary="Software Mgmt" />
-          </ListItemLink>
-          <ListItemLink href="/">
-            <ListItemIcon>
-              <Flight />
-            </ListItemIcon>
-            <ListItemText primary="Migration" />
-          </ListItemLink>
-
-        </List>
-        <Divider />
-      </Drawer>
-      <main className={classes.content}>
-        <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"></link>
+    <>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"></link>
           <nav >
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="home">Home</a></li>
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Cloud Status</li>
             </ol>
           </nav>
@@ -394,7 +227,7 @@ function CloudStatus() {
               fontSize: "16px",
               marginLeft: "45px",
               cursor: "pointer",
-              backgroundColor: "#4169E1",
+              backgroundColor: "#8ebf3f",
               marginTop: "30px",
               borderRadius: "5px",
               fontWeight: "bold",
@@ -427,7 +260,7 @@ function CloudStatus() {
                 alignItems: "center",
                 display: "block",
                 width: "fit-content",
-                backgroundColor: "#3995f8",
+                backgroundColor: "#1977b7",
                 color: "#ffffff",
                 border: "none",
                 cursor: "pointer",
@@ -456,7 +289,7 @@ function CloudStatus() {
                 alignItems: "center",
                 display: "block",
                 width: "fit-content",
-                backgroundColor: "#3995f8",
+                backgroundColor: "#1977b7",
                 color: "#ffffff",
                 border: "none",
                 cursor: "pointer",
@@ -485,7 +318,7 @@ function CloudStatus() {
                 alignItems: "center",
                 display: "block",
                 width: "fit-content",
-                backgroundColor: "#3995f8",
+                backgroundColor: "#1977b7",
                 color: "#ffffff",
                 border: "none",
                 cursor: "pointer",
@@ -571,10 +404,7 @@ function CloudStatus() {
               </Table>
             </TableContainer>
           )}
-        </Container>
-        <Copyright />
-      </main>
-    </div>
+    </>
   );
 }
 

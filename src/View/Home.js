@@ -6,7 +6,6 @@ import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import './App.css';
 import IconButton from "@material-ui/core/IconButton";
 import Badge from "@material-ui/core/Badge";
 import Container from "@material-ui/core/Container";
@@ -27,10 +26,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import Software from "@material-ui/icons/SettingsApplicationsRounded"
 import ListItemText from "@material-ui/core/ListItemText";
-import Migration from "@material-ui/icons/Flight"
 import DashboardIcon from "@material-ui/icons/Dashboard";
-import Service from "@material-ui/icons/Help"
-import PeopleIcon from "@material-ui/icons/People";
 import BarChartIcon from "@material-ui/icons/BarChart";
 import Code from "@material-ui/icons/Code";
 import { Flight, Help } from "@material-ui/icons";
@@ -81,6 +77,7 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
+    backgroundColor: 'rgba(25,119,183,255)', // Change the color here
   },
   appBarShift: {
     marginLeft: drawerWidth,
@@ -157,7 +154,6 @@ export default function Home() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
     <div className={classes.root}>
@@ -218,7 +214,7 @@ export default function Home() {
             </ListItemIcon>
             <ListItemText primary="Cloud Status" />
           </ListItemLink>
-          <ListItemLink href="/">
+          <ListItemLink href="/centralcloud">
             <ListItemIcon>
               <CentralCloud />
             </ListItemIcon>
@@ -285,7 +281,6 @@ export default function Home() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-          {/* Add your content here */}
         </Container>
         <Copyright />
       </main>
