@@ -1,0 +1,39 @@
+.central-cloud {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 26px; /* Adjust the font size as needed */
+    color: #414a4c; 
+    position: relative;
+  }
+  .cloud-overview {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px; /* Adjust the font size as needed */
+    color: #414a4c; 
+    position: relative;
+  }
+  .separator {
+   
+    left: 0; /* Align the separator to the left of its parent */
+    width: 100%; /* Ensure the separator spans the entire width of its parent */
+    border-top: 1px solid #D3D3D3;
+    margin-top: 10px;
+  }
+/* styles.css */
+
+.search-bar {
+  width: 100%;
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #ccc; /* Border color */
+  padding: 8px; /* Reduced padding */
+  font-size: 14px; /* Reduced font size */
+  transition: border-color 0.3s; /* Smooth transition for border color change */
+}
+
+.search-bar:focus {
+  outline: none; /* Remove outline on focus */
+  border-color: #007bff; /* Border color on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add shadow on focus */
+}
+.action-button {
+  font-size: 12px; /* Adjust the font size to make the button smaller */
+  padding: 4px 8px; /* Adjust the padding to make the button smaller */
+}

@@ -4,6 +4,7 @@ import Dashboard from '../View/Dashboard';
 import CloudStatus from '../View/CloudStatus'
 import App from "../App";
 import CentralCloud from "../View/CentralCloud";
+import SubCloud  from "../View/SubCloud";
 
 const loginData=JSON.parse(localStorage.getItem("loginData"))
 const userData={userName:"Pinaka",password:"Pinaka@123"}
@@ -24,6 +25,10 @@ export const router=createBrowserRouter([
         {
             path:'/centralcloud',
             element:<CentralCloud />
+        },
+        {
+            path:'/subcloud',
+            element:<SubCloud />
         },
     ]:[]
     }

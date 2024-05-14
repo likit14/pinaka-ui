@@ -232,7 +232,7 @@ export default function App() {
             </ListItemIcon>
             <ListItemText primary="Central Cloud" />
           </ListItemLink>
-          <ListItemLink href="/">
+          <ListItemLink href="/subcloud">
             <ListItemIcon>
               <BarChartIcon />
             </ListItemIcon>
