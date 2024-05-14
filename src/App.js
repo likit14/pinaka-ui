@@ -238,7 +238,7 @@ export default function App() {
             </ListItemIcon>
             <ListItemText primary="Sub Clouds" />
           </ListItemLink>
-          <ListItemLink href="/">
+          <ListItemLink href="/kubernetes">
             <ListItemIcon>
               <Kubernetes />
             </ListItemIcon>

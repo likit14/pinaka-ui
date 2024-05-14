@@ -5,6 +5,7 @@ import CloudStatus from '../View/CloudStatus'
 import App from "../App";
 import CentralCloud from "../View/CentralCloud";
 import SubCloud  from "../View/SubCloud";
+import Kubernetes from "../View/Kubernetes";
 
 const loginData=JSON.parse(localStorage.getItem("loginData"))
 const userData={userName:"Pinaka",password:"Pinaka@123"}
@@ -29,6 +30,10 @@ export const router=createBrowserRouter([
         {
             path:'/subcloud',
             element:<SubCloud />
+        },
+        {
+            path:'/kubernetes',
+            element:<Kubernetes />
         },
     ]:[]
     }
