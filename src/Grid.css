@@ -1,0 +1,21 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start of the cross axis (top) */
+    background-color: #f2f2f2;
+    padding: 45px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .grid-header {
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+  

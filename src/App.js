@@ -36,7 +36,7 @@ import "@fontsource/open-sans/400.css"; // Specify weight
 import "@fontsource/open-sans/400-italic.css"; // Specify weight and style
 import { Outlet, useNavigate } from "react-router-dom";
 
-
+import Logo from "./Images/logo.png"; 
 function ListItemLink(props) {
   return <ListItem button component="a" {...props} />;
 }
@@ -191,7 +191,7 @@ export default function App() {
             noWrap
             className={classes.title}
           >
-            Home
+            Dashboard
           </Typography>
           <IconButton color="inherit" onClick={handelLogout}>
               <Badge color="secondary">
@@ -212,6 +212,9 @@ export default function App() {
             <ChevronLeftIcon />
           </IconButton>
         </div>
+        <Divider />
+        {/* Your logo component */}
+        <img src={Logo} alt="Logo" />
         <Divider />
         <List>
           <ListItemLink href="/">
@@ -244,7 +247,7 @@ export default function App() {
             </ListItemIcon>
             <ListItemText primary="Kubernetes" />
           </ListItemLink>
-          <ListItemLink href="/">
+          <ListItemLink href="/storagecluster">
             <ListItemIcon>
               <StorageCluster />
             </ListItemIcon>
