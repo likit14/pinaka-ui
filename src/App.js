@@ -212,10 +212,10 @@ export default function App() {
             <ChevronLeftIcon />
           </IconButton>
         </div>
-        <Divider />
-        {/* Your logo component */}
+        
+        {/* Your logo component
         <img src={Logo} alt="Logo" />
-        <Divider />
+        <Divider /> */}
         <List>
           <ListItemLink href="/">
             <ListItemIcon>
