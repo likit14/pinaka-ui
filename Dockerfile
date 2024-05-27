@@ -1,4 +1,4 @@
-FROM node 12 as build-step
+FROM node:12 as build-step
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . . 
 
-EXPOSE 3002
+EXPOSE 3003
 
 CMD [ "npm","run","start"]
 
