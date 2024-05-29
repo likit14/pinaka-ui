@@ -8,7 +8,7 @@
   command: docker rm react-app
   ignore_errors: True
 - name: remove the running image
-  command: docker rmi mahmudhasan/react-app:latest
+  command: docker rmi likith/react-app:latest
   ignore_errors: True
 - name: Create and run container
   command: docker run -d -p 3000:80 --name react-app likith/react
