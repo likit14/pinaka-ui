@@ -58,8 +58,9 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > private_key
           chmod 600 private_key
           ssh -i private_key -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST << EOF
-            docker pull your-dockerhub-username/your-react-app:${{ github.sha }}
-            docker stop your-react-app || true
-            docker rm your-react-app || true
-            docker run -d -p 80:80 --name your-react-app your-dockerhub-username/your-react-app:${{ github.sha }}
+            docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
+            docker pull pinakadev/pinakaui:${{ github.sha }}
+            docker stop pinakaui || true
+            docker rm pinakaui || true
+            docker run -d -p 80:80 --name pinakaui pinakadev/pinakaui:${{ github.sha }}
           EOF
