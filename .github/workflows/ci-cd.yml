@@ -28,7 +28,7 @@ jobs:
         run: npm run build
 
       - name: Build Docker image
-        run: docker build -t your-dockerhub-username/your-react-app:${{ github.sha }} .
+        run: docker build -t pinakadev/pinakaui:${{ github.sha }} .
 
       - name: Log in to DockerHub
         uses: docker/login-action@v2
@@ -37,7 +37,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push Docker image
-        run: docker push your-dockerhub-username/your-react-app:${{ github.sha }}
+        run: docker push pinakadev/pinakaui:${{ github.sha }}
 
   deploy:
     needs: build
