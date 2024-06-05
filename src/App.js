@@ -191,7 +191,7 @@ export default function App() {
             noWrap
             className={classes.title}
           >
-            Home
+            H
           </Typography>
           <IconButton color="inherit" onClick={handelLogout}>
               <Badge color="secondary">
